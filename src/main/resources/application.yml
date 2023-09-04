@@ -1,0 +1,32 @@
+spring:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/jwt_security?user=postgres&password=postgres
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+## spring: tool used to setup the environment
+##  datasource: database configuration parameters to use
+##    url: jdbc:postgresql://localhost:5432/ jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>
+##    username: postgres
+##    password: postgres
+##    driver-class-name: org.postgresql.Driver
+##  jpa: java persistence api
+#      hibernate:
+#       ddl-auto: update ##actualizar
+#      show-sql: true ## show the sql properties
+#      properties:
+#        hibernate:
+#          format_sql: true  how the format will be for queries with java
+#      database: postgresql type of the database
+#      database-platform: org.hibernate.dialect.PostgreSQLDialect   dialect of postgreSQL remember is
+#           Postgre not Postgres for this section
