@@ -1,4 +1,4 @@
- package com.david.security.user;
+package com.david.security.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
