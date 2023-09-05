@@ -21,9 +21,10 @@ public class JwtService {
     // High entropy token change where to store it!
 
     private Key getSignInKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
+        byte[] keyBytes = Decoders.BASE64.decode("SECRET_KEY");
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
     private Claims extractAllClaims(String token) {
         return Jwts
                 .parserBuilder()
@@ -62,7 +63,7 @@ public class JwtService {
                 .builder()
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
-                .setIssuedAt(new Date(System.currentTimeMillis( )))
+                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 3600000))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
