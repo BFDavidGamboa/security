@@ -18,6 +18,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
+<<<<<<< HEAD
     // High entropy token change where to store it!
 
     private Key getSignInKey() {
